@@ -97,10 +97,9 @@ and pressing `enter`.
 ![Invoking the Plus Function](./assets/plus_func.png)
 
 <details>
-    <summary>Calling a Function</summary>
-    Include a screenshot of your function-call
-    [PP2 1](https://github.com/user-attachments/assets/c84d0607-f331-48ab-82db-14d0448b8595)
-
+  <summary>Calling a Function</summary>
+  Include a screenshot of your function call:  
+  ![PP2 1](https://raw.githubusercontent.com/MetinG57/PP2/master/PP2%201.png)
 </details>
 
 ### Task 4: Handling Parameters
