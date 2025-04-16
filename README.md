@@ -71,7 +71,8 @@ Try accessing the `return_value` identifier without prepending `$`.
 **What happens and why?**
 
 <details>
-    <summary>You Answer</summary>
+    <summary>Wenn man echo return_value ohne das $-Zeichen ausführst, wird der Text return_value ausgegeben, anstatt der Wert der Variable (9). Das liegt daran, dass Bash ohne $ den Namen der Variable als normalen Text behandelt und nicht auf den gespeicherten Wert zugreift. Das $-Zeichen signalisiert Bash, den Inhalt der Variable auszugeben.
+</summary>
     ......
 </details>
 
@@ -97,7 +98,9 @@ and pressing `enter`.
 
 <details>
     <summary>Calling a Function</summary>
-    Include a screenshot of your function-call!
+    Include a screenshot of your function-call
+    [PP2 1](https://github.com/user-attachments/assets/c84d0607-f331-48ab-82db-14d0448b8595)
+
 </details>
 
 ### Task 4: Handling Parameters
@@ -260,7 +263,24 @@ These examples demonstrate various fundamental operations in Bash scripting, inc
 
 **Write a function, combining at least 3 different of these primitives to a function**
 <details>
-    <summary>Your Function</summary>
+    <summary>
+        myfunction() {
+    a=4
+    b=2
+    result=$(( (a + b) / b * (a * b) ))
+    echo "Ergebnis: $result"
+
+    text="Hallo Duisburg"
+    length=${#text}
+    echo "Der '$text' ist $length Zeichen lang"
+
+    if (( result > 10 )); then
+        echo "Das Ergebnis ist groeser als 10"
+    else
+        echo "Das Ergebnis ist 10 oder kleiner"
+    fi
+}
+</summary>
     
 ```bash
 your code
@@ -300,7 +320,11 @@ cat ./function
 
 **What happend?**
 <details>
-    <summary>Your Explaination</summary>
+    <summary>
+        > überschreibt die Datei, d.h. declare -f mysecondfunction > ./function ersetzt den Inhalt von ./function, sodass nur mysecondfunction darin steht – myfunction geht verloren.
+
+>> ergänzt die Datei: declare -f mysecondfunction >> ./functions ergänzt den bestehenden Inhalt, sodass ./functions jetzt beide Funktionen enthält.
+    </summary>
     .....
 
 </details>
@@ -343,7 +367,9 @@ You can use a shorthand within your calls to add this string as a prefix to any 
 
 **Look at task 6 again. What is the complete filepath of your functions file?**
 <details>
-    <summary>Your Answer</summary>
+    <summary>
+    /cygdrive/c/Users/metin/functions    
+    </summary>
     ....
 </details>
 
@@ -367,7 +393,10 @@ cd /
 ```
 **Run `ls` again and insert the content here:**
 <details>
-    <summary>Your Answer</summary>
+    <summary>
+    Cygwin-Terminal.ico  Cygwin.ico  cygdrive  etc   lib   sbin  usr
+Cygwin.bat           bin         dev       home  proc  tmp   varcd    
+    </summary>
     ....
 </details>
 
@@ -384,7 +413,14 @@ Use `rm` to delete a file and `rm -rf` to delete a directory.
 <details>
     <summary>Your Terminal Output</summary>
 ```bash
-your terminal output
+mkdir mydir
+cd mydir
+touch myfile.txt
+ls
+myfile.txt
+cd
+rm -rf mydir
+ls
 ```
 </details>
 
@@ -421,6 +457,14 @@ sudo apt install vim
 ```
 This will call the program `apt` and more specifically its function `install`, search for the package `vim`, download it and install it. 
 Run the routine and install `vim`.
+
+----
+Ich konnte die Datei nicht runterladen
+$ apt --version
+bash: apt: command not found
+
+$ cat /etc/os-release
+cat: /etc/os-release: No such file or directory
 
 ### Task 11: Manipulating Files
 `vim` is a commonly used text-editor. 
